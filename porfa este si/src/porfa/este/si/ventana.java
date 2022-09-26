@@ -3,7 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package looogin;
+package porfa.este.si;
+
+import java.awt.Color;
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -15,7 +21,13 @@ public class ventana extends javax.swing.JFrame {
      * Creates new form ventana
      */
     public ventana() {
+        setUndecorated(true);
+        setBackground(new Color(102,102,102,205));
         initComponents();
+        this.setExtendedState(this.MAXIMIZED_BOTH);
+        setSize(1140, 902);
+        setResizable(false);
+        Pfondo.setLocation(370,110);
     }
 
     /**
@@ -27,18 +39,20 @@ public class ventana extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Pfondo = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        Pfondo.setLayout(null);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/es el login.jpg"))); // NOI18N
+        Pfondo.add(jLabel1);
+        jLabel1.setBounds(0, 0, 1140, 900);
+
+        getContentPane().add(Pfondo);
+        Pfondo.setBounds(439, 105, 1139, 900);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -77,7 +91,14 @@ public class ventana extends javax.swing.JFrame {
             }
         });
     }
-
+    private void SetImageLabel (JLabel login, String root){
+            ImageIcon image = new ImageIcon(root);
+            Icon icon=new ImageIcon(image.getImage().getScaledInstance(login.getWidth(), login.getHeight(), Image.SCALE_DEFAULT));
+            login.setIcon(icon);
+            this.repaint();
+        }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Pfondo;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

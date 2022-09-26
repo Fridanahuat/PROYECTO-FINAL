@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package looogin;
+package porfa.este.si;
 
 /**
  *
  * @author jesus
  */
-public class Looogin {
+public class PorfaEsteSi {
 
     /**
      * @param args the command line arguments
